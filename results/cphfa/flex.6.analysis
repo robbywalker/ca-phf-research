@@ -1,0 +1,27 @@
+2-10-3-6.cphf: contains redundant rows
+2-10-3-6.cphf: 120/14550
+
+2-11-4-6.cphf: 0/90068
+
+2-7-2-6.cphf: contains redundant rows
+2-7-2-6.cphf: 452/882
+
+3-12-3-6.cphf: 0/26172
+
+3-9-2-6.cphf: contains redundant rows
+3-9-2-6.cphf: 438/1692
+
+4-11-2-6.cphf: contains redundant rows
+4-11-2-6.cphf: 644/2750
+
+4-14-3-6.cphf: 60/40698
+
+5-12-2-6.cphf: contains redundant rows
+5-12-2-6.cphf: 1664/3744
+
+6-14-2-6.cphf: contains redundant rows
+6-14-2-6.cphf: 2682/5236
+
+Analyzed 9 arrays
+6 had redundant rows
+7 had flexible positions

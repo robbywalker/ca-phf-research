@@ -1,0 +1,82 @@
+\documentclass{article}
+
+% basic info
+\title{Probabilistic Bounds for Roux-type Covering Arrays}
+\author{Robert A. Walker II}
+\date{September 2004}
+
+\usepackage{amsmath}
+
+% document start
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Given a $CA(N; k, t, v)$ we wish to create a new covering array $CA(N'; sk, t, v)$.  We use a Roux-type construction
+which entails using $s$ copies of the original covering array (call it $A$). We must then append some additional array
+$B$ with some $M$ columns to fix some problems that ensue from these copies of $A$.  We would like to prove a bound on
+the size of the new composite covering array, $N' = N + M$, in relation to the first.
+
+\emph{Todo: Figure here}
+
+\section{Some Math}
+
+Choose some $t$ rows.  Call this set $\tau$.  Some of these rows may be identical in $A$ - that is, we chose row $k$ from
+the $i$th copy of $A$ and the same from the $j$th copy of $A$.  These rows are distinct in our new covering array but
+contain the same entries.  We denote the number of rows in $\tau$ that are unique as $\mu$.
+
+Now, choose some $t$-tuple $\theta$ from the $v^t$ possible $t$-tuples.  Then, define event $X(\tau, \theta)$ as the
+situation where $\theta$ does not appear in any column of $\tau$.  Then,
+
+\begin{equation}
+Pr[X(\tau, \theta)] = Pr[X(\tau, \theta)]_A Pr[X(\tau, \theta)]_B
+\end{equation}
+
+where $Pr[X(\tau, \theta)]_A]$ is the probability that $\theta$ does not appear in the $A$ portion of $\tau$ and $X_B$ is
+defined similarly.  Then,
+
+\begin{equation}
+\label{Pr[X(T,t)_A]}
+Pr[X(\tau, \theta)]_A] = \frac{v^t - v^\mu}{v^t}
+\end{equation}
+
+and
+
+\begin{equation}
+\label{Pr[X(T,t)_B]}
+Pr[X(\tau, \theta)_B] = \left( \frac{v^t - 1}{v^t} \right)^M
+\end{equation}
+
+Combining \ref{Pr[X(T,t)_A]} and \ref{Pr[X(T,t)_B]} we get
+
+\begin{equation}
+\label{Pr[X(T,t)]}
+Pr[X(\tau, \theta)] = \left(\frac{v^t - v^\mu}{v^t} \right) \left(\frac{v^t - 1}{v^t} \right)^M
+\end{equation}
+
+Then, the probability that at least one $\theta$ is not represented in $\tau$ is
+
+\begin{eqnarray}
+Pr[X(\tau)] & \leq & v^t Pr[X(\tau, \theta)] { } \nonumber \\
+                 & = & \left(v^t - v^\mu \right) \left(\frac{v^t - 1}{v^t} \right)^M
+\label{Pr[X(T)]}
+\end{eqnarray}
+
+Finally, the probability that some $\tau$ exists with at least one $\theta$ not represented is
+
+\begin{eqnarray}
+Pr[X] & \leq & \sum_{\forall \tau} Pr[X(\tau)] { } \nonumber \\
+      &    = & \sum_{\forall \tau} \left(\frac{v^t - v^\mu}{v^t} \right) \left(\frac{v^t - 1}{v^t} \right)^M { } \nonumber \\
+      &    = & \left( \frac{ v^t - 1 }{v^t} \right)^M \left( \binom{sk}{t} v^t - \sum_{\forall \tau}{v^\mu} \right)
+\end{eqnarray}
+
+We can group the last term into $\tau$s with the same value of $\mu$ to achieve:
+
+\begin{equation}
+\sum_{\forall \tau}{v^\mu}= \sum_{\mu = 1}^{t} \binom{k}{\mu} \binom{\mu (s - 1)}{t - \mu} v^\mu
+\end{equation}
+
+How to simplify this?  We have to prove that it is greater than or equal to something useful.
+
+\end{document}
